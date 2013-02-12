@@ -1,21 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void)
+int main(int argc, char **argv)
 {
-    int len = 12280;
-    
-    char str[10];
 
-    printf("\n Enter the name \n\n");
 
-    gets(str); // Used gets() to cause buffer overflow
+   char str1[10],
+        str2[] = {"abcdefghijklmnopqrstuvwxyz"};
+   int len = sizeof(str1);
 
-    printf("\n len = [%d] \n", len);
+   if (argc > 1)
+   {
+      len = atoi(argv[1]);
+   }
 
-    len  = strlen(str);
-    
-    printf("\n len of string entered is : [%d]\n", len);
+   memmove(str1, str2, len);
 
-    return 0;
+   return 0;
 }
