@@ -5,7 +5,7 @@ int main(void)
 {
     int len = 12280;
     
-    char str[10];
+    char str[10] = {0};
 
     printf("\n Enter the name \n\n");
 
