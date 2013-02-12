@@ -1,9 +1,10 @@
 CFLAGS := -g -O0
+CFLAGS2 := $(CFLAGS) -Wall -fno-stack-protector
 CC     := gcc
-all	: stackmash
-stackmash : stacksmash.c
+all	: stacksmash
+stacksmash : stacksmash.c
 	$(CC) $(CFLAGS) $< -o $@
 clean :
-	rm -f *~ stacksmash
+	rm -fr *~ stacksmash *dSYM
 run :
 	./stacksmash
