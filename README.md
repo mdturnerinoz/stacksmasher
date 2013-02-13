@@ -46,8 +46,7 @@ TO DO:
 1. document this better.
 2. Test instructions herein on how to run the various tests and observe behavior 
    (note that ulimit settings need to be documented too).
-3. In stacksmash1 do the same memory address displaying as done in stacksmash2.
-4. Comment the "whys and wherefores" in the code in each version.
+3. Comment the "whys and wherefores" in the code in each version.
 
 
 
