@@ -1,7 +1,8 @@
 
 stacksmasher: this program is used to show how a stack can be corrupted by using too
 large of a value in a move. The original code did not work the same as its author 
-(at The Geek Stuff) had noted in his article ();
+(at The Geek Stuff) had noted in his article at
+(http://www.thegeekstuff.com/2013/02/stack-smashing-attacks-gcc/);
 
 I have both his version and mine included here so both can be played with.
 
