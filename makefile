@@ -6,5 +6,5 @@ stacksmash : stacksmash.c
 	$(CC) $(CFLAGS) $< -o $@
 clean :
 	rm -fr *~ stacksmash *dSYM core*
-run :
+run : all
 	./stacksmash
