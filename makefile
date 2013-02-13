@@ -1,5 +1,5 @@
 LEN      = 12
-CFLAGS  := -g -O0 -Wall -fstack-protector
+CFLAGS  := -g -O0 -Wall -fstack-protector -Wl,-Map,output.map. 
 CFLAGS2 := -g -O0 -Wall -fno-stack-protector
 CC      := gcc
 all	: stacksmash1 stacksmash2
@@ -8,7 +8,7 @@ stacksmash1 : stacksmash1.c
 stacksmash2 : stacksmash2.c
 	$(CC) $(CFLAGS) $< -o $@
 clean :
-	rm -fr *~ stacksmash1 stacksmash2 *dSYM core*
+	rm -fr *~ stacksmash1 stacksmash2 *dSYM core* *.map
 run1 : all
 	./stacksmash1 $(LEN)
 run2 : all
