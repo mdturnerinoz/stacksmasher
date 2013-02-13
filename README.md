@@ -33,10 +33,8 @@ NB1: The stack-protector option may or may not be defaulted in the version of GC
      may want to do the same (or test this yourself) as I found the original 
      author's notes (Ubuntu 12.04) not the same for Mageia 2.
 
-NB2: I have only tested this on Mageia 2 Linux-wise. I did try it on Mac OS 10.8.2
-     with no failures. This is not really a surprise since Mac OS X is BSD Unix 
-     and as such may have significantly better parameter checking than any Linux
-     distro/variant.
+NB2: I have only tested this on Mageia 2 Linux-wise. It does fail on Mac OS (BSD
+     Unix) but with no stack trace as it does on Linux.
 
 Marty Turner - 13 Feb 2013
 
