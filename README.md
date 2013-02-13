@@ -9,19 +9,45 @@ I have both his version and mine included here so both can be played with.
 this is a work-in-progress and I will provide more/better usage documentation as my
 diurnal activities allow.
 
+The makefile builds four versions of the program to test:
+
+stacksmash1/stacksmash1n: The former uses stack-protector while the latter version 
+                          does not. In both cases you will be prompted for input.
+                          As the stack is laid out with the variables I've coded,
+                          you will not be able to enter greater than 24 characters
+                          without getting a SIGSEGV (segmentation fault). You can
+                          rearrange the variables and the stacksmash2/2n version
+                          will show you memory addresses to see why the overlay
+                          has occurred.
+
+stacksmash2/stacksmash2n: The former uses stack-protector while the latter version
+                          while the latter doers not. The code will perform a 
+                          "memmove" based on a length entered on the command line
+                          defaulted to 12) of the makefile or if entered by you.
+                          Same stack overlay per the "1" version above; any length
+                          greater than 24 results in a SIGSEGV.
+
+NB1: The stack-protector option may or may not be defaulted in the version of GCC
+     running on your distro. I have accounted for that possibility in the 
+     stacksmash1 and stacksmash2 objects by forcing it on in the compile step; you
+     may want to do the same (or test this yourself) as I found the original 
+     author's notes (Ubuntu 12.04) not the same for Mageia 2.
+
+NB2: I have only tested this on Mageia 2 Linux-wise. I did try it on Mac OS 10.8.2
+     with no failures. This is not really a surprise since Mac OS X is BSD Unix 
+     and as such may have significantly better parameter checking than any Linux
+     distro/variant.
+
 Marty Turner - 13 Feb 2013
 
 
 TO DO:
 
 1. document this better.
-2. test the original model and mine in the makefile.
-3. note that do NOT assume the stack-protector GCC flag is set on any Linux distro 
-   (e.g. mine is Mageia 2 whereas his was Ubuntu 12.04). (NB I have force set it in
-   the makefile).
-4. Makefile commentary and build each version of the program with both the flags
-   set and not set.
-5. Test instructions herein on how to run the various tests and observe behavior 
+2. Test instructions herein on how to run the various tests and observe behavior 
    (note that ulimit settings need to be documented too).
+3. In stacksmash1 do the same memory address displaying as done in stacksmash2.
+4. Comment the "whys and wherefores" in the code in each version.
+
 
 
