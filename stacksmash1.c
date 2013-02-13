@@ -3,19 +3,22 @@
 
 int main(void)
 {
-    int len = 0;
+    int len = 12;
     
-    char str[10] = {0};
+    char str[12] = {0};
 
     printf("\n Enter the name \n\n");
 
     gets(str); // Used gets() to cause buffer overflow
 
-    printf("\n len = [%d] \n", len);
+    printf("len        : %d\n", len);
+    printf("len-str    : %d\n", (int)sizeof(str));
+    printf("addr str   : %p\n", (void*)str);
+    printf("addr len   : %p\n", (void*)&len);
 
     len  = strlen(str);
     
-    printf("\n len of string entered is : [%d]\n", len);
+    printf("\nlen entered: %d\n", len);
 
     return 0;
 }
